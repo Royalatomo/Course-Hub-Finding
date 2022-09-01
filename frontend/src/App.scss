@@ -1,0 +1,54 @@
+// Colors
+$primary-blue: #0d1122;
+$dark-white: #f4f4f4;
+$light-whitesmoke: #ededed;
+$dark-whitesmoke: #a7a7a7;
+$gray: #808080;
+$darkish-gray: #4f4f4f;
+$bright-green: #1c8d2f;
+$light-green: #006e31;
+$red: #e30000;
+$secondary-blue: #00717c;
+$light-blue: #02b1cd;
+$purplish-blue: #0e90ff;
+$blackish-blue: #00d0ff69;
+$orange: #ffc400;
+$dark-orange: #ff9c098f;
+
+// Transition
+$fast-transition: all 0.1s linear;
+$normal-transition: all 0.2s linear;
+$slow-transition: all 0.3s linear;
+
+// Border
+$normal-border: 2px solid;
+$medium-border: 3px solid;
+$dark-border: 4px solid;
+
+// Mixins
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexEnd {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@mixin gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+@mixin fitContent {
+  min-width: fit-content;
+  min-height: fit-content;
+}
+
+@mixin minWH100 {
+  min-width: 100%;
+  min-height: 100%;
+}

@@ -1,0 +1,17 @@
+#categories {
+  display: grid;
+  grid-gap: 2rem;
+  text-align: center;
+
+  @media screen and (min-width: 1350px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  @media screen and (max-width: 1350px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  @media screen and (max-width: 980px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../../App.scss";
+
+#course .box {
+  background: $light-whitesmoke;
+  border: $dark-border $gray;
+  border-bottom: none;
+
+  &.active {
+    .section-lectures {
+      display: block;
+    }
+
+    .section {
+      border-bottom: $medium-border $gray;
+      img {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+#course .section {
+  @include flexCenter;
+  background: $dark-orange;
+  padding: 11px 15px;
+  cursor: pointer;
+  user-select: none;
+  transition: $fast-transition;
+
+  img {
+    transition: $normal-transition;
+  }
+
+  .section-head {
+    margin: 0 1rem;
+    font-weight: bold;
+    color: $primary-blue;
+    font-size: 15px;
+  }
+
+  .info {
+    @include flexCenter;
+    margin-left: auto;
+    color: $darkish-gray;
+    font-size: 13px;
+
+    .dot {
+      margin: 0 8px;
+      width: 7px;
+      height: 7px;
+      background: $gray;
+      display: inline-block;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover {
+    background-color: darken($dark-orange, 7%);
+  }
+
+  @media screen and (max-width: 1250px) {
+    img {
+      height: 14px;
+    }
+
+    .section-head {
+      font-size: 14px;
+    }
+
+    .info {
+      @include fitContent;
+      font-size: 11px;
+      .dot {
+        width: 4px;
+        height: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,194 @@
+@import "../../App.scss";
+
+header {
+  @include flexCenter;
+  padding: 5px 0;
+  box-shadow: 0 10px 13px $dark-whitesmoke;
+  background: $primary-blue;
+  margin-bottom: 3rem;
+
+  .header-text {
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+    margin: 0 2rem;
+    border-bottom: $normal-border transparent;
+    transition: $normal-transition;
+
+    &:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    @media screen and (max-width: 1120px) {
+      display: none;
+    }
+  }
+
+  .fav {
+    margin-left: 3rem;
+    @media screen and (max-width: 1120px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .logo {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  background-color: $primary-blue;
+  width: fit-content;
+  margin-left: 3rem;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.search {
+  @include flexCenter;
+  background: #fff;
+  padding: 5px 13px;
+  border-radius: 20px;
+  outline: $normal-border #fff;
+  outline-offset: 4px;
+  flex: 1;
+
+  img {
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  input {
+    background: none;
+    border: none;
+    color: $gray;
+    font-size: 20px;
+    width: 100%;
+
+    &::placeholder {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media screen and (max-width: 1120px) {
+    margin: 0 3rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 1rem 2rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    img {
+      height: 25px;
+    }
+
+    input {
+      font-size: 18px;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  margin-right: 2rem;
+
+  & > img {
+    border-radius: 50%;
+
+    &:hover,
+    :focus {
+      box-shadow: 0 0 10px #fff;
+    }
+  }
+
+  &-menu {
+    @include fitContent;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background-color: #fff;
+    border: $dark-border #000;
+    transition: $normal-transition;
+    z-index: 10;
+
+    .container {
+      @include flexCenter;
+      text-shadow: 2px 2px 1px $dark-whitesmoke;
+      margin: 1rem 2rem;
+      justify-content: space-between;
+      img {
+        width: 40px;
+        margin-left: 2rem;
+      }
+    }
+
+    h2 {
+      color: $light-green;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    li {
+      list-style: none;
+      padding: 10px 15px;
+      font-weight: bold;
+
+      a {
+        font-size: 20px;
+        color: $red;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &-menu.active {
+    transform: translateX(0%);
+  }
+
+  @media screen and (max-width: 1120px) {
+    display: block;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.bottom-menu {
+  @include flexCenter;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: $primary-blue;
+  padding: 1rem 0;
+  z-index: 10;
+
+  img {
+    height: 30px;
+  }
+
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}

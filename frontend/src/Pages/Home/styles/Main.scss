@@ -1,0 +1,46 @@
+@import "../../../App.scss";
+
+#home .categories {
+  padding: 0 2rem;
+  .head {
+    @include flexEnd;
+    justify-content: space-between;
+
+    a {
+      font-weight: bold;
+      color: $light-blue;
+      letter-spacing: 1px;
+      border-bottom: $normal-border transparent;
+      cursor: pointer;
+      transition: $normal-transition;
+
+      &:hover {
+        border-bottom: $normal-border;
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      align-items: flex-start;
+      flex-direction: column;
+
+      a {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .body {
+    @include gridCenter;
+    gap: 2rem;
+    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media screen and (max-width: 1015px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 680px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+#collection {
+  padding: 0 2rem;
+  .cards-container {
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 3rem;
+
+    @media screen and (min-width: 1600px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 1160px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+}

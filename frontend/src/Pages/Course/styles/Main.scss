@@ -1,0 +1,271 @@
+@import "../../../App.scss";
+
+#course {
+  display: flex;
+  padding: 0 2rem;
+  width: fit-content;
+  margin: 0 auto;
+
+  @media screen and (max-width: 950px) {
+    flex-direction: column-reverse;
+    padding: 0 10px;
+  }
+
+  .loadmore {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #242424;
+    margin-top: 1rem;
+    padding: 10px 0;
+    color: white;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    transition: $fast-transition;
+    
+    &:hover {
+      border-radius: 60px;
+      background: #3f3f3f;
+    }
+  }
+}
+
+#course .divider.info {
+  margin-right: 1rem;
+
+  @media screen and (max-width: 950px) {
+    margin: 0;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    margin-top: 0;
+
+    @media screen and (max-width: 950px) {
+      font-size: 24px;
+    }
+  }
+
+  .last-updated {
+    width: fit-content;
+    background: $light-whitesmoke;
+    padding: 6px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: $darkish-gray;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    border-radius: 7px;
+
+    @media screen and (max-width: 950px) {
+      font-size: 13px;
+    }
+  }
+
+  .description {
+    margin-bottom: 2rem;
+    font-size: 18px;
+    max-width: 60vw;
+    line-height: 1.4;
+    color: $primary-blue;
+
+    @media screen and (max-width: 950px) {
+      font-size: 16px;
+      max-width: none;
+    }
+  }
+
+  .creators {
+    @include flexCenter;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+
+    .text {
+      font-size: 18px;
+      color: $purplish-blue;
+      margin-right: 1rem;
+      margin-top: 10px;
+    }
+
+    .creator-name {
+      background: $blackish-blue;
+      color: #000;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 1rem;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 950px) {
+      .text {
+        font-size: 16px;
+      }
+      .creator-name {
+        font-size: 14px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .course-content {
+    .section-heading {
+      font-size: 22px;
+      margin-bottom: 1rem;
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+      color: $darkish-gray;
+
+      .dot {
+        display: inline-block;
+        background: $gray;
+        width: 8px;
+        height: 8px;
+        margin: 0 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+#course .divider.video {
+  @include fitContent;
+
+  iframe {
+    height: 230px;
+    width: 410px;
+
+    @media screen and (max-width: 950px) {
+      height: 355px;
+      width: 630px;
+    }
+
+    @media screen and (max-width: 700px) {
+      height: 310px;
+      width: 550px;
+    }
+
+    @media screen and (max-width: 620px) {
+      height: 250px;
+      width: 450px;
+    }
+
+    @media screen and (max-width: 515px) {
+      height: 197px;
+      width: 350px;
+    }
+
+    @media screen and (max-width: 365px) {
+      height: 170px;
+      width: 320px;
+    }
+  }
+
+  div {
+    margin: 0 auto;
+    max-width: 410px;
+
+    @media screen and (max-width: 950px) {
+      max-width: 630px;
+    }
+
+    @media screen and (max-width: 700px) {
+      max-width: 550px;
+    }
+
+    @media screen and (max-width: 620px) {
+      max-width: 450px;
+    }
+
+    @media screen and (max-width: 515px) {
+      max-width: 350px;
+    }
+
+    @media screen and (max-width: 365px) {
+      max-width: 320px;
+    }
+  }
+
+  .wrapper {
+    padding: 1rem 1rem;
+    background: $dark-white;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-align: center;
+      margin: 10px 0;
+      padding: 9px 0;
+      font-weight: bold;
+      box-shadow: 2px 3px 5px $dark-whitesmoke;
+      transition: $normal-transition;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+
+    .original {
+      background: $orange;
+    }
+
+    .watch {
+      background: $bright-green;
+      color: #fff;
+    }
+
+    .download {
+      background: $purplish-blue;
+      color: #fff;
+    }
+  }
+
+  .msg {
+    font-size: 14px;
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+
+  .alert {
+    font-size: 14px;
+    color: $red;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
+#course .dropdown-boxes {
+  margin-top: 2rem;
+
+  .section-lectures {
+    display: none;
+    padding: 20px 0;
+    user-select: none;
+
+    hr {
+      border: $normal-border $dark-whitesmoke;
+      margin: 8px 0;
+    }
+
+    @media screen and (max-width: 1250px) {
+      padding: 15px 0;
+    }
+  }
+
+  .box:last-child {
+    border: $dark-border $gray;
+  }
+}

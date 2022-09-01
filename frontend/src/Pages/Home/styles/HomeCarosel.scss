@@ -1,0 +1,73 @@
+@import "../../../App.scss";
+
+#home-carosel {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+.carousel {
+  .slide .legend {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 35px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px $light-whitesmoke;
+    font-weight: bold;
+    opacity: 0;
+  
+    &.course {
+      background: $secondary-blue;
+    }
+  
+    &.blog {
+      background: $red;
+    }
+  
+    @media screen and (max-width: 750px) {
+      font-size: 18px;
+      padding: 6px 25px;
+    }
+  
+    @media screen and (max-width: 350px) {
+      font-size: 15px;
+      padding: 6px 16px;
+    }
+  }
+
+  .control-dots .dot {
+    background-color: $primary-blue;
+    width: 10px;
+    height: 10px;
+
+    &.selected,
+    &:hover {
+      background-color: $primary-blue;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &.carousel-slider {
+    padding-bottom: 3rem;
+
+    & .control-arrow {
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      padding-bottom: 2rem;
+    }
+  }
+}

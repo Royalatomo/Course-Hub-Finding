@@ -1,0 +1,250 @@
+@import "../../../App.scss";
+
+#home .card {
+  width: 240px;
+  position: relative;
+  margin: 0 auto;
+
+  @media screen and (max-width: 430px) {
+    width: 205px;
+  }
+
+  .head {
+    display: inline-block;
+    position: relative;
+
+    .favourite {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      border: $normal-border #000;
+      border-radius: 50%;
+      padding: 4px;
+      background-color: #fff;
+      height: 35px;
+      transition: $normal-transition;
+      cursor: pointer;
+
+      &.empty {
+        background-color: $primary-blue;
+      }
+    }
+
+    .cover-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .body {
+    margin-top: 0.4rem;
+    display: inline-block;
+    .cname {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .instructor {
+      font-size: 14px;
+      margin-bottom: 0.3rem;
+      color: $gray;
+    }
+
+    .time {
+      font-size: 12px;
+      font-weight: bold;
+      color: $gray;
+    }
+
+    .dot {
+      margin: 0 0.4rem;
+      width: 5px;
+      height: 5px;
+      background-color: $gray;
+      display: inline-block;
+      border-radius: 50%;
+    }
+  }
+
+  #collection {
+    padding: 0 2rem;
+    .cards-container {
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 3rem;
+
+      @media screen and (min-width: 1600px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      @media screen and (max-width: 1160px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media screen and (max-width: 900px) {
+        @include fitContent;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+  }
+
+  .popup-box {
+    @include fitContent;
+    opacity: 0;
+    position: absolute;
+    border: $normal-border $dark-whitesmoke;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    z-index: -10;
+    max-width: 100%;
+    transition: $slow-transition;
+    padding: 14px 10px;
+    background: #fff;
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+
+    &.active {
+      opacity: 1;
+      transform: translateX(100%);
+      z-index: 10;
+    }
+
+    &.left {
+      transform: translateX(-100%);
+    }
+
+    &.center {
+      transform: translateX(0);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .last-updated {
+      @include fitContent;
+      font-size: 11px;
+      background: $light-whitesmoke;
+      padding: 3px 12px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: $darkish-gray;
+    }
+
+    .instructors {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+
+      span {
+        margin-top: 6px;
+        background: $blackish-blue;
+        padding: 3px 9px;
+        font-size: 13px;
+        border-radius: 3px;
+        margin-right: 10px;
+      }
+    }
+
+    .time {
+      @include flexCenter;
+      text-align: center;
+      background: $darkish-gray;
+      color: #fff;
+      padding: 5px 0;
+      border-radius: 5px;
+      font-size: 11px;
+      flex-wrap: wrap;
+
+      .dot {
+        height: 5px;
+        width: 5px;
+        display: inline-block;
+        background: #fff;
+        margin: 0 6px;
+        border-radius: 50%;
+      }
+    }
+
+    .desc {
+      font-size: 13px;
+      margin-top: 12px;
+      font-size: 14px;
+      max-height: 75px;
+      overflow-y: scroll;
+      margin-bottom: 0.7rem;
+      cursor: default;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+
+    .original-div {
+      @include flexCenter;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      .original {
+        background: $orange;
+        height: 100%;
+        padding: 6px 0;
+        border-radius: 5px;
+        width: 100%;
+        margin-right: 1rem;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 1px 1px 4px $gray;
+        transition: $normal-transition;
+
+        &:hover {
+          background-color: darken($orange, 4%);
+        }
+      }
+
+      img {
+        height: 27px;
+        background: #fff;
+        outline: $normal-border #000;
+        border-radius: 50%;
+        padding: 3px;
+      }
+    }
+
+    .watch-now {
+      font-size: 13px;
+      background: $light-green;
+      width: 100%;
+      display: inline-block;
+      border-radius: 5px;
+      text-align: center;
+      padding: 6px 10px;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: bold;
+      box-shadow: 1px 1px 4px $gray;
+      transition: $normal-transition;
+
+      &:hover {
+        background-color: darken($light-green, 4%);
+      }
+    }
+  }
+}

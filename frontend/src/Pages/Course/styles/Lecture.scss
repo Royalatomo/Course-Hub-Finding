@@ -1,0 +1,36 @@
+@import "../../../App.scss";
+
+#course .lecture {
+  @include flexCenter;
+  padding: 0 20px;
+
+  .lecture-heading {
+    font-size: 16px;
+    margin: 0 1rem;
+
+    span {
+      font-weight: bold;
+      color: $primary-blue;
+    }
+  }
+
+  .length {
+    @include fitContent;
+    margin-left: auto;
+    font-size: 14px;
+    color: $darkish-gray;
+  }
+  @media screen and (max-width: 1250px) {
+    img {
+      height: 15px;
+    }
+
+    .lecture-heading {
+      font-size: 14px;
+    }
+
+    .length {
+      font-size: 12px;
+    }
+  }
+}
